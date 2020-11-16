@@ -1,0 +1,2 @@
+class TentsController < ApplicationController
+end
