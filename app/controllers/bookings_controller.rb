@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  
+  def add_index  
+    @bookings = Booking.where(user: current_user)
+  end
+  
   def new
     @tent = Tent.find(params[:tent_id])
     @booking = Booking.new
@@ -8,7 +13,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @tent = Tent.find(params[:tent_id])
-    @booking.tent = @tent
+    @booking.tent = @tent 
+    @booking.user = current_user
     @booking.save
     redirect_to tent_path(@tent)
   end
@@ -17,7 +23,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def update ## check this code with the TA?
+  def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
