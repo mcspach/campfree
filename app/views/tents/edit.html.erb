@@ -1,1 +1,10 @@
-<h1>You are at Edit Tents</h1>
+<h1>You are at Edit Tents page</h1>
+
+  <h3>Change the details below</h3>
+      <%= simple_form_for @tent do |f| %>
+      <%= f.input :title %>
+      <%= f.input :location %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.submit class: "btn btn-primary"%>
+      <% end %>

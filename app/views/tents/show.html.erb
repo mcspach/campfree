@@ -1,1 +1,6 @@
-<h1>One Tent Page</h1>
+<h1>Show Page For One Tent</h1>
+
+<%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-warning" %>
+
+<%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" } %>
+    
