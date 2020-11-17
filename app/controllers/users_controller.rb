@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params) # ask TA if we need to use current_user here?
     
     if @user.save
       redirect_to user_path(@user), notice: "You have successfully created your profile!!"
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) # ask TA if we need to use current_user here?
   end
 
   def edit

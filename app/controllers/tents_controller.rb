@@ -14,8 +14,7 @@ class TentsController < ApplicationController
 
   def create
     @tent = Tent.new(tent_params)
-    @user = User.find(params[:user_id])
-    @tent.user = @user # ask TA if this code is correct?
+    @tent.user = current_user
     if @tent.save
       redirect_to tent_path(@tent), notice: "You have successfully listed your tent!"
     else

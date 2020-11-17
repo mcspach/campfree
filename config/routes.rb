@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
 
   resources :tents do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:index, :new, :create, :edit, :update]
   end
 
   resources :bookings, only: [:destroy]
