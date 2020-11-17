@@ -29,7 +29,7 @@ class TentsController < ApplicationController
   def update
     @tent = Tent.find(params[:id])
     @tent.update(tent_params)
-    redirect_to tent_path(@user)
+    redirect_to tent_path(current_user)
   end
 
   def destroy

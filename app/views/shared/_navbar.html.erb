@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 <%# if working witj local files, dont need relative path. just file name (absolute path) %>
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/darienhz/image/upload/v1605649209/Outpost_Logo_v55z4u.png" %>
+    <%= image_tag "Outpost_Logo.png" %> 
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,12 +19,15 @@
          <%= link_to "Add a tent", new_tent_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
-         <%= link_to "My bookings", user_bookings_path(current_user), class: "nav-link" %>
+        <%= link_to "My tent listings", tents_user_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+         <%= link_to "My bookings", bookings_user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://images.unsplash.com/photo-1602471615287-d733c59b79c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-             <%= link_to "Profile", "#", class: "dropdown-item" %>
+             <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
