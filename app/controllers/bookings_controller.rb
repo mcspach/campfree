@@ -1,13 +1,5 @@
 class BookingsController < ApplicationController
 
-  def index
-    @bookings = Booking.where(user: current_user)
-  end
-
-  # def index_by_tent
-  #   @bookings = Booking.where(tent_id: params[:tent_id])
-  # end
-
   def new
     @tent = Tent.find(params[:tent_id])
     @booking = Booking.new
@@ -18,8 +10,11 @@ class BookingsController < ApplicationController
     @tent = Tent.find(params[:tent_id])
     @booking.tent = @tent
     @booking.user = current_user
-    @booking.save
-    redirect_to tent_path(@tent)
+    if @booking.save!
+      redirect_to bookings_user_path(current_user), notice: "You have successfully booked this tent!"
+    else
+      render :new
+    end
   end
 
   def edit
