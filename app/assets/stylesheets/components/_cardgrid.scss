@@ -1,18 +1,20 @@
 .card {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
+  height: 250px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  font-size: 22px;
-  color: white;
+  // justify-content: space-around;
+  font-size: 18px;
+  color: black;
   font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
   margin-bottom: 16px;
+  text-decoration: none;
 }
+
+a:hover {
+    text-decoration: none;
+  }
 
 .cards {
   display: grid;
@@ -21,3 +23,10 @@
   margin: 16px;
   flex-grow: 1;
 }
+.card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  object-fit: cover;
+}
+

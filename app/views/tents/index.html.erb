@@ -9,33 +9,15 @@
     <h2>All tents</h2>
   </div>
 </div>
-<% @tents.each do |tent| %>
-  <ul>
-    <li>
-      <%= link_to tent.title, tent_path(tent) %>
-    </li>
-  </ul>
-<% end %>
-<%# div below is for testing actual seeding will be with the .each above %>
 <div class="content-layout">
       <div class="cards">
-        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Tents
+        <% @tents.each do |tent| %>
+        <%= link_to tent_path(tent) do %>
+        <div class="card">
+          <%= image_tag "https://res.cloudinary.com/darienhz/image/upload/v1605731059/jesse-gardner-wTVr4HR4SBI-unsplash_v6h1e5.jpg", class: "card-image" %>
+          <p><%=tent.title%></p>
         </div>
-        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Tents
-        </div>
-        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Tents
-        </div>
-        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Tents
-        </div>
-        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Tents
-        </div>
-        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          Tents
-        </div>
+        <% end %>
+      <% end %>
      </div>
 </div>
