@@ -1,1 +1,8 @@
 <h2>All tents</h2>
+<% @tents.each do |tent| %>
+<ul>
+<li>
+<%= link_to tent.title, tent_path(tent) %>
+</li>
+</ul>
+<% end %>
