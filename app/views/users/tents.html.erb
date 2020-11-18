@@ -1,1 +1,14 @@
-<h1> This is all the host's tents listed </h1>
+<h1>My Tents</h1>
+
+<div class="content-layout">
+      <div class="cards">
+        <% @tents.each do |tent| %>
+        <%= link_to tent_path(tent) do %>
+        <div class="card">
+          <%= image_tag "https://res.cloudinary.com/darienhz/image/upload/v1605731059/jesse-gardner-wTVr4HR4SBI-unsplash_v6h1e5.jpg", class: "card-image" %>
+          <p><%=tent.title%></p>
+        </div>
+        <% end %>
+      <% end %>
+     </div>
+</div>
