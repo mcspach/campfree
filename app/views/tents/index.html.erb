@@ -4,12 +4,38 @@
     <h1>Get out there...</h1>
   </div>
 </div>
-
-<h2>All tents</h2>
+<div class="container">
+  <div class="text-center pt-2">
+    <h2>All tents</h2>
+  </div>
+</div>
 <% @tents.each do |tent| %>
-<ul>
-<li>
-<%= link_to tent.title, tent_path(tent) %>
-</li>
-</ul>
+  <ul>
+    <li>
+      <%= link_to tent.title, tent_path(tent) %>
+    </li>
+  </ul>
 <% end %>
+<%# div below is for testing actual seeding will be with the .each above %>
+<div class="content-layout">
+      <div class="cards">
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Tents
+        </div>
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Tents
+        </div>
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Tents
+        </div>
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Tents
+        </div>
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Tents
+        </div>
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Tents
+        </div>
+     </div>
+</div>
