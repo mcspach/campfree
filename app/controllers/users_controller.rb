@@ -14,6 +14,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def tents
+    @tents = Tent.where(user: current_user)
+  end
+
+  def bookings
+    @bookings = Booking.where(user: current_user)
+  end
+
   def show
     @user = User.find(params[:id]) # ask TA if we need to use current_user here?
   end
