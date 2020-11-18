@@ -1,8 +1,25 @@
-<h1>Show Page For One Tent</h1>
+
+<div class="container">
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1546811740-23e671faf31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+  <div class="card-trip-infos">
+    <div>
+      <h3><%= @tent.title %></h3>
+      <h2><%= @tent.location %></h2>
+      <p><%= @tent.description %></p>
+    </div>
+    <h2 class="card-trip-pricing">$<%= @tent.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+</div>
+
+<div class="container">
 <% if @tent.user == current_user %>
 <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-warning" %>
 <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-warning" %>
 <% else %>
 <%= render "shared/booking_form" %>
 <% end %>
+</div>
     
