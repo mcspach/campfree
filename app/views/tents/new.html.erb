@@ -1,4 +1,5 @@
   <h3>Enter your new tent below</h3>
+  <div class="container">
     <h4>Tell us more about it!</h4>
       <%= simple_form_for @tent do |f| %>
       <%= f.input :title %>
@@ -7,4 +8,5 @@
       <%= f.input :description %>
       <%= f.submit class: "btn btn-primary"%>
       <% end %>
+      </div>
   

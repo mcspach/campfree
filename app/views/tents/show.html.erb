@@ -1,6 +1,8 @@
 <h1>Show Page For One Tent</h1>
-
+<% if @tent.user == current_user %>
 <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-warning" %>
-
-<%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-warning" %>
+<% else %>
+<%= render "shared/booking_form" %>
+<% end %>
     

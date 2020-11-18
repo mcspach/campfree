@@ -1,11 +1,12 @@
 class TentsController < ApplicationController
 
   def index
-    @tent = Tent.all
+    @tents = Tent.all
   end
 
   def show
     @tent = Tent.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -15,7 +16,7 @@ class TentsController < ApplicationController
   def create
     @tent = Tent.new(tent_params)
     @tent.user = current_user
-    if @tent.save
+    if @tent.save!
       redirect_to tent_path(@tent), notice: "You have successfully listed your tent!"
     else
       render :new
