@@ -1,18 +1,5 @@
   <h3>Enter your new tent below</h3>
   <div class="container">
-<<<<<<< HEAD
-    <div class="form-box">
-      <h4>Tell us more about it!</h4>
-        <%= simple_form_for @tent do |f| %>
-        <%= f.input :title %>
-        <%= f.input :state %>
-        <%= f.input :address %>
-        <%= f.input :price %>
-        <%= f.input :description %>
-        <%= f.input :photos, as: :file, input_html: {multiple: true} %>
-        <%= f.submit class: "btn btn-primary"%>
-        <% end %>
-=======
     <h4>Tell us more about it!</h4>
       <%= simple_form_for @tent do |f| %>
       <%= f.input :title %>
@@ -23,7 +10,6 @@
       <%= f.input :photos, as: :file, input_html: {multiple: true} %>
       <%= f.submit class: "btn btn-primary"%>
       <% end %>
->>>>>>> 923c091e1532f143828df090753a0b8a7eb7afdc
       </div>
   </div>
   

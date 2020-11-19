@@ -15,8 +15,8 @@ class TentsController < ApplicationController
     @tent = Tent.find(params[:id])
     @booking = Booking.new
     @markers = [{
-        lat: @tent.latitude,
-        lng: @tent.longitude
+          lat: @tent.latitude,
+          lng: @tent.longitude
       }]
   end
 
@@ -33,7 +33,7 @@ class TentsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @tent = Tent.find(params[:id])
   end
