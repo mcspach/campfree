@@ -2,7 +2,11 @@ class TentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @tents = Tent.all
+    if params[:state].present? 
+      @tents = Tent.where("state ILIKE ? ", params[:state])
+    else
+      @tents = Tent.all
+    end
   end
 
   def show
