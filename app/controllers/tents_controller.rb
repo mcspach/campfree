@@ -2,7 +2,13 @@ class TentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @tents = Tent.geocoded
+
+    if params[:state].present? 
+      @tents = Tent.geocoded.where("state ILIKE ? ", params[:state])
+    else
+      @tents = Tent.geocoded
+    end
+
   end
 
   def show
