@@ -43,6 +43,6 @@ class TentsController < ApplicationController
   private
 
   def tent_params
-    params.require(:tent).permit(:title, :description, :price, :location, :user_id, photos:[]) # We will need to create a variable for photo
+    params.require(:tent).permit(:title, :description, :price, :state, :address, :user_id, photos:[]) # We will need to create a variable for photo
   end
 end
