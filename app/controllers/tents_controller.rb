@@ -2,12 +2,16 @@ class TentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @tents = Tent.all
+    @tents = Tent.geocoded
   end
 
   def show
     @tent = Tent.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+        lat: @tent.latitude,
+        lng: @tent.longitude
+      }]
   end
 
   def new
@@ -43,6 +47,6 @@ class TentsController < ApplicationController
   private
 
   def tent_params
-    params.require(:tent).permit(:title, :description, :price, :state, :address, :user_id, photos:[]) # We will need to create a variable for photo
+    params.require(:tent).permit(:title, :description, :price, :state, :address, :user_id, :latitude, :longitude, photos:[])
   end
 end
