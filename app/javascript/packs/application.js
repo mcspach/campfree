@@ -1,5 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
+import { loadDynamicBannerText } from '../components/hero';
 
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -14,6 +15,10 @@ require("channels")
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
