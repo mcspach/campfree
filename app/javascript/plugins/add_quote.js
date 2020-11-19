@@ -4,8 +4,10 @@ const addQuote = () => {
     fetch("https://type.fit/api/quotes")
     .then(response => response.json())
     .then((data) => {
+      const arrIndex = Math.floor(Math.random() * data.length) ;
       const quoteToEnter = `
-        <p>${data[Math.floor(Math.random() * data.length )].text}</p>
+        <h2>${data[arrIndex].text} </h2>
+        <p> - ${data[arrIndex].author}</p>
       `;
       results.insertAdjacentHTML("beforeend", quoteToEnter);
     });
