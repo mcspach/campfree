@@ -31,3 +31,7 @@ a:hover {
 	object-fit: cover;
 	border-radius: 6px 6px 0 0;
 }
+
+.card:hover {
+	transform: scale(0.975)
+}
