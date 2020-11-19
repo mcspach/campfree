@@ -2,7 +2,7 @@
 <div class="container">
 <div class="card-trip">
   <% if not @tent.photos.empty? %>
-    <%= cl_image_tag(@tent.photos.first.key, width: 400, height: 300, crop: :fill) %>
+    <%= cl_image_tag(@tent.photos.first.key, crop: :fill) %>
   <% end  %>
   <div class="card-trip-infos">
     <div>
@@ -16,12 +16,12 @@
 </div>
 
 <div class="container">
-<% if @tent.user == current_user %>
-<%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-warning" %>
-<%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-warning" %>
-<% else %>
-<%= render "shared/booking_form" %>
-<% end %>
+  <% if @tent.user == current_user %>
+    <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-warning" %>
+    <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-warning" %>
+  <% else %>
+    <%= render "shared/booking_form" %>
+  <% end %>
 </div>
 
 <div class="contiainer">
