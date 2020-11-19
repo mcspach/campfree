@@ -3,7 +3,8 @@
   <h3>Change the details below</h3>
       <%= simple_form_for @tent do |f| %>
       <%= f.input :title %>
-      <%= f.input :location %>
+      <%= f.input :state %>
+      <%= f.input :address %>
       <%= f.input :price %>
       <%= f.input :description %>
       <%= f.input :photo, as: :file %>
