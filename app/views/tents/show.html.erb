@@ -1,7 +1,9 @@
 
 <div class="container">
 <div class="card-trip">
-  <img src="https://images.unsplash.com/photo-1546811740-23e671faf31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+  <% if not @tent.photos.empty? %>
+    <%= cl_image_tag(@tent.photos.first.key, width: 400, height: 300, crop: :fill) %>
+  <% end  %>
   <div class="card-trip-infos">
     <div>
       <h3><%= @tent.title %></h3>

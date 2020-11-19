@@ -17,7 +17,7 @@ class TentsController < ApplicationController
   def create
     @tent = Tent.new(tent_params)
     @tent.user = current_user
-    if @tent.save!
+    if @tent.save
       redirect_to tent_path(@tent), notice: "You have successfully listed your tent!"
     else
       render :new
@@ -43,7 +43,6 @@ class TentsController < ApplicationController
   private
 
   def tent_params
-    params.require(:tent).permit(:title, :description, :price, :location, :user_id, :photo) # We will need to create a variable for photo
+    params.require(:tent).permit(:title, :description, :price, :location, :user_id, photos:[]) # We will need to create a variable for photo
   end
-
 end
