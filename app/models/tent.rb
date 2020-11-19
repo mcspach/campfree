@@ -6,6 +6,7 @@ class Tent < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :location, presence: true
+  validates :address, presence: true
+  validates :state, presence: true
 
 end
