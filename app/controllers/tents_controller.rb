@@ -3,8 +3,12 @@ class TentsController < ApplicationController
 
   def index
 
-    if params[:state].present? 
-      @tents = Tent.geocoded.where("state ILIKE ? ", params[:state])
+    if params[:state].present?
+      if params[:state] == 'All States'
+        @tents = Tent.geocoded
+      else   
+        @tents = Tent.geocoded.where("state ILIKE ? ", params[:state])
+      end
     else
       @tents = Tent.geocoded
     end
