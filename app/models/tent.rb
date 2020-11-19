@@ -1,6 +1,6 @@
 class Tent < ApplicationRecord
   belongs_to :user
-
+  has_many_attached :photos
   has_many :bookings, dependent: :destroy
 
   validates :title, presence: true, uniqueness: true
@@ -8,5 +8,4 @@ class Tent < ApplicationRecord
   validates :price, presence: true
   validates :address, presence: true
   validates :state, presence: true
-
 end

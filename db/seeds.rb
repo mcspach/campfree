@@ -31,57 +31,71 @@ puts "User Created!"
 
 tent_1 = Tent.create!(
   title: "Beautiful camp in the woods of Montana",
-  location: "Helena, Montana",
+  address: "20334 Saticoy St, Winnetka, California, 91306",
+  state: "California",
   description: "This quaint little camp in the woods is perfect for a weekend getaway. It comes with firepit, chairs and a lovely view of the valley from an elevated position.",
   price: 150.00,
+  photo: "https://images.unsplash.com/photo-1445308394109-4ec2920981b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id 
 )
 
 tent_2 = Tent.create!(
   title: "Super cute traditional tent overlooking lake",
-  location: "Portsmouth, Maine",
+  address: "100 Dugway Rd, Waitsfield, Vermont, 05673",
+  state: "Vermont",
   description: "We have been camping at this beautiful spot for the last 20 years. Come year to relax, unplug and enjoy the serenity overlooking a natural lake with plenty of salmon and bluegill trout.",
   price: 240.00,
+  photo: "https://images.unsplash.com/photo-1539022778322-f3fbeb6d32f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id
 )
 
 tent_3 = Tent.create!(
   title: "Snowy camping tent great for a romantic getaway",
-  location: "Utah, Colorado",
+  address: "72518 240th St, Dassel, Minnesota, 55325",
+  state: "Minnesota",
   description: "The perfect camp for novist campers. This camp comes with all the amenities in case you are looking for a short weekend away from Denver - it includes fully equipped outdoor bathroom and shower.",
   price: 10.00,
+  photo: "https://images.unsplash.com/photo-1604093999627-d7dcbc5d3301?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id
 )
 
 tent_4 = Tent.create!(
-  title: "Lovely couple getaway in the mountains",
-  location: "Lake Tahoe, California",
+  title: "Awesome couple getaway",
+  address: "1355 Glen Eagles Rd, South Lake Tahoe, California, 96150",
+  state: "California",
   description: "Stylish camp getaway located in the mountains just 15 miles from Lake Tahoe. This is a perfect little hut for the city dweller",
   price: 100.00,
+  photo: "https://images.unsplash.com/photo-1598954467835-3b0b6fe3be70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id
 )
 
 tent_5 = Tent.create!(
   title: "The windbreaker in the woods",
-  location: "Jackson Holes, Wyoming",
+  address: "9 Longbow Ln, Pinedale, Wyoming, 82941",
+  state: "Wyoming",
   description: "This adventure's tent is perfect for the expert camper who is looking for some adventured and the rugged beauty that Jackson Holes has to offer. Perched on a cliff, you will get stunning views of the valley and a clean burst of fresh air.",
   price: 1000.00,
+  photo: "https://images.unsplash.com/photo-1544239649-4238bf7bd7d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id
 )
 
 tent_6 = Tent.create!(
   title: "Lovely little tent in the forrest",
-  location: "Catsills, NY",
+  address: "8645 Saint James Ave, Elmhurst, New York, 11373",
+  state: "New York",
   description: "This is a really authentic little tend perfect for a weekend getaway with friends or your romantic partner. It is in excellent condition with full amenities so all you need to bring is yourself!",
   price: 300.00,
+  photo: "https://images.unsplash.com/photo-1604906145393-5d0fdd5a199a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id
 )
 
 tent_7 = Tent.create!(
   title: "Beachmaster camp for the wave rider",
-  location: "Baja, California",
+  address: "487 E Middlefield Rd, Mountain View, California, 94043",
+  state: "California",
   description: "This is the perfect getwaway for the surfer who is looking for a weekend of shredding waves and pumping beers. You will get a perfect view of the sunset over the ocean with amazing wildlife surrounding.",
   price: 150.00,
+  photo: "https://images.unsplash.com/photo-1534507658483-02cfca87f13f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
   user_id: User.all.sample.id
 )
 
