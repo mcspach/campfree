@@ -19,6 +19,39 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6,
+p {
 	font-family: "K2D", sans-serif;
+}
+
+.btn,
+.btn-success, 
+.btn-warning, 
+.btn-danger,
+.btn-primary {
+  background-color: #5FBEC6;
+  border-radius: 6px; 
+  box-shadow: 0 0 1px;
+  margin: 4px;
+  border: none;
+  color: white;
+}
+
+.btn:hover,
+.btn-success:hover, 
+.btn-warning:hover, 
+.btn-danger:hover,
+.btn-primary:hover {
+  background-color: #AAD9DD;
+  box-shadow: 0 0 1.5px white;
+  color: white
+} 
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
 }

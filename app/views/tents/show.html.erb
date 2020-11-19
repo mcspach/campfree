@@ -17,8 +17,8 @@
 
 <div class="container">
   <% if @tent.user == current_user %>
-    <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-warning" %>
-    <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-warning" %>
+    <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-success" %>
+    <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
   <% else %>
     <%= render "shared/booking_form" %>
   <% end %>
