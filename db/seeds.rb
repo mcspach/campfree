@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+Booking.destroy_all
 User.destroy_all
 
 User.create(
@@ -32,7 +33,7 @@ User.create(
 puts "User Created!"
 
 tent_1 = Tent.create!(
-  title: "Beautiful camp in the woods of Montana",
+  title: "Beautiful camp in the woods of NorCal",
   address: "20334 Saticoy St, Winnetka, California, 91306",
   state: "California",
   description: "This quaint little camp in the woods is perfect for a weekend getaway. It comes with firepit, chairs and a lovely view of the valley from an elevated position.",
@@ -60,7 +61,7 @@ tent_3 = Tent.create!(
 
 tent_4 = Tent.create!(
   title: "Awesome couple getaway",
-  address: "1355 Glen Eagles Rd, South Lake Tahoe, California, 96150",
+  address: "910 Sagewood Dr, South Lake Tahoe, California, 96150",
   state: "California",
   description: "Stylish camp getaway located in the mountains just 15 miles from Lake Tahoe. This is a perfect little hut for the city dweller",
   price: 100.00,
@@ -69,7 +70,7 @@ tent_4 = Tent.create!(
 
 tent_5 = Tent.create!(
   title: "The windbreaker in the woods",
-  address: "9 Longbow Ln, Pinedale, Wyoming, 82941",
+  address: "21 Decker Rd, Sheridan, Wyoming, 82801",
   state: "Wyoming",
   description: "This adventure's tent is perfect for the expert camper who is looking for some adventured and the rugged beauty that Jackson Holes has to offer. Perched on a cliff, you will get stunning views of the valley and a clean burst of fresh air.",
   price: 35.00,
@@ -77,7 +78,7 @@ tent_5 = Tent.create!(
 )
 
 tent_6 = Tent.create!(
-  title: "Lovely little tent in the forrest",
+  title: "Lovely little escape in the forrest",
   address: "8645 Saint James Ave, Elmhurst, New York, 11373",
   state: "New York",
   description: "This is a really authentic little tend perfect for a weekend getaway with friends or your romantic partner. It is in excellent condition with full amenities so all you need to bring is yourself!",
@@ -90,24 +91,46 @@ tent_7 = Tent.create!(
   address: "487 E Middlefield Rd, Mountain View, California, 94043",
   state: "California",
   description: "This is the perfect getwaway for the surfer who is looking for a weekend of shredding waves and pumping beers. You will get a perfect view of the sunset over the ocean with amazing wildlife surrounding.",
-  price: 150.00,
+  price: 90.00,
   user_id: User.all.sample.id
 )
 
-file1 = URI.open('https://images.unsplash.com/photo-1445308394109-4ec2920981b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+tent_8 = Tent.create!(
+  title: "Barnyard Boogiewoogie",
+  address: "313 Lake Placid Loop, Valley, Alabama, 36854",
+  state: "Alabama",
+  description: "This is the perfect getwaway for the grimy dudes and peeps who is looking for a weekend of shredding beef and pumping beers. You will get a perfect view of the sunset over the barn with amazing fields surrounding.",
+  price: 40.00,
+  user_id: User.all.sample.id
+)
+
+tent_9 = Tent.create!(
+  title: "Social Campsites near Yellowstone",
+  address: "727 Big Horn Ave, Sheridan, Wyoming, 82801",
+  state: "Wyoming",
+  description: "Only an hour drive to the heart of Yellowstone, we have set up a great place to hang out with the other campers and prepare for exploring the area.",
+  price: 29.00,
+  user_id: User.all.sample.id
+)
+
+file1 = URI.open('https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 tent_1.photos.attach(io: file1, filename: '1.png', content_type: 'image/png')
-file2 = URI.open('https://images.unsplash.com/photo-1539022778322-f3fbeb6d32f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+file2 = URI.open('https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 tent_2.photos.attach(io: file2, filename: '2.png', content_type: 'image/png')
-file3 = URI.open('https://images.unsplash.com/photo-1604093999627-d7dcbc5d3301?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+file3 = URI.open('https://images.unsplash.com/photo-1508266822900-0640fd19e392?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 tent_3.photos.attach(io: file3, filename: '3.png', content_type: 'image/png')
-file4 = URI.open('https://images.unsplash.com/photo-1598954467835-3b0b6fe3be70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+file4 = URI.open('https://images.unsplash.com/photo-1525811902-f2342640856e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80')
 tent_4.photos.attach(io: file4, filename: '4.png', content_type: 'image/png')
-file5 = URI.open('https://images.unsplash.com/photo-1544239649-4238bf7bd7d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+file5 = URI.open('https://images.unsplash.com/photo-1542332213-1d277bf3d6c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 tent_5.photos.attach(io: file5, filename: '5.png', content_type: 'image/png')
-file6 = URI.open('https://images.unsplash.com/photo-1604906145393-5d0fdd5a199a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+file6 = URI.open('https://images.unsplash.com/photo-1604906145393-5d0fdd5a199a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 tent_6.photos.attach(io: file6, filename: '6.png', content_type: 'image/png')
-file7 = URI.open('https://images.unsplash.com/photo-1534507658483-02cfca87f13f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60')
+file7 = URI.open('https://images.unsplash.com/photo-1534507658483-02cfca87f13f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 tent_7.photos.attach(io: file7, filename: '7.png', content_type: 'image/png')
+file8 = URI.open('https://images.unsplash.com/photo-1489176876421-3b720db0fb3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+tent_8.photos.attach(io: file8, filename: '8.png', content_type: 'image/png')
+file9 = URI.open('https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+tent_9.photos.attach(io: file9, filename: '9.png', content_type: 'image/png')
 
 
 puts "Tent Created!"
