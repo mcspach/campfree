@@ -18,18 +18,24 @@
 
   <div class="container booking-box">
     <% if @tent.user == current_user %>
-      <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-success" %>
-      <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+    <div class="center">
+      <%= link_to "Edit Tent Details", edit_tent_path(@tent), class: "btn btn-success" %>
+      <%= link_to "Remove Listing", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+    </div>
     <% else %>
       <%= render "shared/booking_form" %>
     <% end %>
   </div>
 
   <div class="contiainer">
+    <% if @tent.geocoded? %>
     <div id="map"
         style="width: 80%; height: 400px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <% else %>
+    <div class="center"><p>There is no map avaialable for this listing. The address was not found by mapbox.</p></div>
+    <% end %>
     </div>
   </div>
     

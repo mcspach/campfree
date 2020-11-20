@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :bookings
   has_many :tents, dependent: :destroy
+  has_one_attached :photo
 
   validates :username, presence: true, uniqueness: true
 end

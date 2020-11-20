@@ -22,18 +22,19 @@ User.create(
       email: "bob@example.com",
       password: "123456"
     },
-    {
-      username: "Charlie",
-      email: "charlie@example.com",
-      password: "123456"
-    }
   ]
 )
+
+avatar1 = URI.open('https://images.unsplash.com/photo-1566827713505-6af1f50028e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80')
+User.first.photo.attach(io: avatar1, filename: 'A.png', content_type: 'image/png')
+avatar2 = URI.open('https://images.unsplash.com/photo-1598966739654-5e9a252d8c32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+User.last.photo.attach(io: avatar2, filename: 'B.png', content_type: 'image/png')
+
 
 puts "User Created!"
 
 tent_1 = Tent.create!(
-  title: "Beautiful camp in the woods of NorCal",
+  title: "Beautiful woodsy camp in NorCal",
   address: "20334 Saticoy St, Winnetka, California, 91306",
   state: "California",
   description: "This quaint little camp in the woods is perfect for a weekend getaway. It comes with firepit, chairs and a lovely view of the valley from an elevated position.",
@@ -42,7 +43,7 @@ tent_1 = Tent.create!(
 )
 
 tent_2 = Tent.create!(
-  title: "Super cute traditional tent overlooking lake",
+  title: "Cute traditional tent by the lake",
   address: "100 Dugway Rd, Waitsfield, Vermont, 05673",
   state: "Vermont",
   description: "We have been camping at this beautiful spot for the last 20 years. Come year to relax, unplug and enjoy the serenity overlooking a natural lake with plenty of salmon and bluegill trout.",
@@ -51,7 +52,7 @@ tent_2 = Tent.create!(
 )
 
 tent_3 = Tent.create!(
-  title: "Snowy camping tent great for a romantic getaway",
+  title: "Unique weekend getaway sleeps 4",
   address: "72518 240th St, Dassel, Minnesota, 55325",
   state: "Minnesota",
   description: "The perfect camp for novist campers. This camp comes with all the amenities in case you are looking for a short weekend away from Denver - it includes fully equipped outdoor bathroom and shower.",
@@ -60,7 +61,7 @@ tent_3 = Tent.create!(
 )
 
 tent_4 = Tent.create!(
-  title: "Awesome couple getaway",
+  title: "Awesome couple retreat site",
   address: "910 Sagewood Dr, South Lake Tahoe, California, 96150",
   state: "California",
   description: "Stylish camp getaway located in the mountains just 15 miles from Lake Tahoe. This is a perfect little hut for the city dweller",
@@ -78,7 +79,7 @@ tent_5 = Tent.create!(
 )
 
 tent_6 = Tent.create!(
-  title: "Lovely little escape in the forrest",
+  title: "Lovely little forest escape",
   address: "8645 Saint James Ave, Elmhurst, New York, 11373",
   state: "New York",
   description: "This is a really authentic little tend perfect for a weekend getaway with friends or your romantic partner. It is in excellent condition with full amenities so all you need to bring is yourself!",
@@ -87,7 +88,7 @@ tent_6 = Tent.create!(
 )
 
 tent_7 = Tent.create!(
-  title: "Beachmaster camp for the wave rider",
+  title: "Beachmaster wave-riders camp",
   address: "487 E Middlefield Rd, Mountain View, California, 94043",
   state: "California",
   description: "This is the perfect getwaway for the surfer who is looking for a weekend of shredding waves and pumping beers. You will get a perfect view of the sunset over the ocean with amazing wildlife surrounding.",
