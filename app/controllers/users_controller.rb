@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) # ask TA if we need to use current_user here?
+    @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user), notice: "You have successfully created your profile!!"
     else

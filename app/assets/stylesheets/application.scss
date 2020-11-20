@@ -58,11 +58,10 @@ a:hover {
   color: white;
 }
 
-input[type='file'] {
-  background-color: #5FBEC6;
+select {
   border-radius: 12px; 
-  box-shadow: 0 0 1px;
-  margin: 4px;
+  box-shadow: 0 0 1px grey;
   border: none;
-  color: white;
+  padding: 9px;
+  margin: 4px;
 }
