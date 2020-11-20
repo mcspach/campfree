@@ -11,7 +11,9 @@
       <p><%= @tent.description %></p>
     </div>
     <h2 class="card-trip-pricing">$<%= @tent.price %></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <% if not @tent.user.photo.nil? %>
+        <%= cl_image_tag(@tent.user.photo.key, crop: :fill, class: "card-trip-user avatar-bordered")%>
+      <% end %>
   </div>
 </div>
 
