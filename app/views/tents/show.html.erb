@@ -12,7 +12,7 @@
     </div>
     <h2 class="card-trip-pricing">$<%= @tent.price %></h2>
       <% if not @tent.user.photo.nil? %>
-        <%= cl_image_tag(@tent.user.photo.key, crop: :fill, class: "card-trip-user avatar-bordered")%>
+        <%= cl_image_tag(@tent.user.photo.key, crop: :fill, width: 350, height: 350, class: "card-trip-user avatar-bordered")%>
       <% end %>
   </div>
 </div>
