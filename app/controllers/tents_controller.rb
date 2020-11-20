@@ -49,7 +49,7 @@ class TentsController < ApplicationController
   def destroy
     @tent = Tent.find(params[:id])
     @tent.destroy
-    redirect_to root_path, notice: "Thank you for using Outpost fucker!"
+    redirect_to root_path, notice: "Thank you for using Outpost"
   end
 
   private

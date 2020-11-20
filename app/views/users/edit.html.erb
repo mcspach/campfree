@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>Change the details of your profile below</h3>
+      <%= simple_form_for current_user do |f| %>
+      <%= f.input :username %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn btn-primary"%>
+      <% end %>
+</div>
