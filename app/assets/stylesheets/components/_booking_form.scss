@@ -1,0 +1,8 @@
+.booking_form {
+	display: grid;
+	grid-template-columns: 1fr;
+  width: 200px;
+  grid-gap: 12px;
+	margin: 16px;
+	flex-grow: 1;
+}
