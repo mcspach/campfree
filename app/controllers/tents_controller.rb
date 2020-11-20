@@ -5,12 +5,12 @@ class TentsController < ApplicationController
 
     if params[:state].present?
       if params[:state] == 'All States'
-        @tents = Tent.geocoded
+        @tents = Tent.all
       else   
-        @tents = Tent.geocoded.where("state ILIKE ? ", params[:state])
+        @tents = Tent.where("state ILIKE ? ", params[:state])
       end
     else
-      @tents = Tent.geocoded
+      @tents = Tent.all
     end
 
   end
