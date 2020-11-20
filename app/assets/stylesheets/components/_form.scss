@@ -3,17 +3,36 @@
   border: 1px solid #e8ecee;
 }
 
-.btn {
-  border-radius: 6px;
-}
-
 .form-inputs {
   margin: 60px;
+  border-radius: 20px;
+  
+  input {
+    border-radius: 12px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
 }
 
 #login-header {
   text-align: left;
   padding-top: 12px;
-  padding-left: 18px;
   font-size: 48px;
+  padding-left: 50px;
+}
+
+.form-actions {
+  padding-left: 50px
+}
+
+.container input {
+    border-radius: 12px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.form-control {
+    border-radius: 12px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
