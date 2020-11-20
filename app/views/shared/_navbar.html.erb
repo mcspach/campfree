@@ -21,7 +21,7 @@
           <div class = "pill-nav" id = "navbarDropdown", data-toggle = "dropdown" , aria-haspopup = 'true', aria-expanded = 'false'>
             <i class="fas fa-bars"></i>
              <% if current_user.photo.attached? %>
-              <%= cl_image_tag(current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle")%>
+              <%= cl_image_tag(current_user.photo.key, crop: :fill, width: 350, height: 350, class: "avatar dropdown-toggle")%>
              <% end %>
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
