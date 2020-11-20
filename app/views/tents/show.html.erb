@@ -15,20 +15,21 @@
   </div>
 </div>
 
-<div class="container">
-  <% if @tent.user == current_user %>
-    <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-success" %>
-    <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
-  <% else %>
-    <%= render "shared/booking_form" %>
-  <% end %>
-</div>
 
-<div class="contiainer">
-  <div id="map"
-      style="width: 100%; height: 400px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="container booking-box">
+    <% if @tent.user == current_user %>
+      <%= link_to "Edit", edit_tent_path(@tent), class: "btn btn-success" %>
+      <%= link_to "Remove", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+    <% else %>
+      <%= render "shared/booking_form" %>
+    <% end %>
   </div>
-</div>
+
+  <div class="contiainer">
+    <div id="map"
+        style="width: 80%; height: 400px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
     
