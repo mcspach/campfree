@@ -4,11 +4,21 @@
 }
 
 .navbar-lewagon .navbar-collapse {
-	flex-grow: 0;
+  flex-grow: 0;
+  transition: .6s ease;
+}
+
+.navbar-lewagon .navbar-collapse:hover {
+  transform: scale(1.2);
 }
 
 .navbar-lewagon .navbar-brand img {
-	width: 40px;
+  transition: .6s ease;
+  width: 50px;
+}
+
+.navbar-lewagon .navbar-brand img:hover {
+  transform: scale(1.25);
 }
 
 .h1 {
