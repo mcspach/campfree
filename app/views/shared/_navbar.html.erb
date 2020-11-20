@@ -24,9 +24,9 @@
         <li class="nav-item dropdown">
           <div class = "pill-nav" id = "navbarDropdown", data-toggle = "dropdown" , aria-haspopup = 'true', aria-expanded = 'false'>
             <i class="fas fa-bars"></i>
-            <%# <% if not current_user.photo.empty? %>
-              <%= cl_image_tag(current_user.photo, crop: :fill, class: "avatar dropdown-toggle")%>
-            <%# <% end %>
+            <% if not current_user.photo.nil? %>
+              <%= cl_image_tag(current_user.photo.key, crop: :fill, class: "avatar dropdown-toggle")%>
+            <% end %>
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
              <%= link_to "Bookings", bookings_user_path(current_user), class: "dropdown-item" %>

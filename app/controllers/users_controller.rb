@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
 
   def create
     @user = User.new(user_params) # ask TA if we need to use current_user here?
-    
+
     if @user.save
       redirect_to user_path(@user), notice: "You have successfully created your profile!!"
     else
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to root_path, notice:"Thank you for using Outpost fucker!"
+    redirect_to root_path, notice: "Thank you for using Outpost fucker!"
   end
 
   private
@@ -47,5 +46,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :encrypted_password, :username)
   end
-
 end
