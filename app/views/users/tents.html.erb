@@ -5,7 +5,7 @@
         <% @tents.each do |tent| %>
         <%= link_to tent_path(tent) do %>
         <div class="card">
-          <%= image_tag "https://res.cloudinary.com/darienhz/image/upload/v1605731059/jesse-gardner-wTVr4HR4SBI-unsplash_v6h1e5.jpg", class: "card-image" %>
+          <%= cl_image_tag(tent.photos.first.key, crop: :fill, class: "card-image") %>
           <p><%=tent.title%></p>
         </div>
         <% end %>

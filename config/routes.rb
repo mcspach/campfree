@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
 
   resources :tents do
-    resources :bookings, only: [:index, :new, :create, :edit, :update]
+    resources :bookings, only: [:index, :new, :create]
   end
 
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:edit, :update, :destroy]
 end
