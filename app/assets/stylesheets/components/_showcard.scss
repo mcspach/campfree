@@ -7,7 +7,7 @@
 }
 
 .card-trip > img {
-  height: 400px;
+  height: 500px;
   width: 100%;
   object-fit: cover;
 }
@@ -41,7 +41,7 @@
 }
 
 .container {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .tent-map {
@@ -64,3 +64,12 @@ margin-bottom: 20px;
   border-radius: 6px;
   margin: 0 auto;
 }
+
+.center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 40px;
+}
+
