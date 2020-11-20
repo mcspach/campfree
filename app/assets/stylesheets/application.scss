@@ -32,7 +32,7 @@ p {
 .btn-danger,
 .btn-primary {
   background-color: #5FBEC6;
-  border-radius: 6px; 
+  border-radius: 12px; 
   box-shadow: 0 0 1px;
   margin: 4px;
   border: none;
@@ -50,10 +50,19 @@ p {
 } 
 
 a {
-  border-radius: 6px;
+  border-radius: 12px;
   color: white;
 }
 
 a:hover {
+  color: white;
+}
+
+input[type='file'] {
+  background-color: #5FBEC6;
+  border-radius: 12px; 
+  box-shadow: 0 0 1px;
+  margin: 4px;
+  border: none;
   color: white;
 }
