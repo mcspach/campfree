@@ -25,7 +25,7 @@
       <%= link_to "Remove Listing", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
     </div>
     <% else %>
-      <%= render "shared/booking_form" %>
+      <%= render "shared/new_booking_form" %>
     <% end %>
   </div>
 

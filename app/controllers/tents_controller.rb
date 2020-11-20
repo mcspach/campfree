@@ -4,12 +4,12 @@ class TentsController < ApplicationController
   def index
     if params[:state].present?
       if params[:state] == 'All States'
-        @tents = Tent.geocoded
-      else
-        @tents = Tent.geocoded.where("state ILIKE ? ", params[:state])
+        @tents = Tent.all
+      else   
+        @tents = Tent.where("state ILIKE ? ", params[:state])
       end
     else
-      @tents = Tent.geocoded
+      @tents = Tent.all
     end
   end
 
@@ -43,7 +43,7 @@ class TentsController < ApplicationController
   def update
     @tent = Tent.find(params[:id])
     @tent.update(tent_params)
-    redirect_to tent_path(current_user)
+    redirect_to tent_path(@tent)
   end
 
   def destroy
