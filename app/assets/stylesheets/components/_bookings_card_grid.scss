@@ -16,12 +16,12 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: $bluewhite;
   font-size: 18px;
   font-weight: none;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px $bluelightgrey;
   border-radius: 6px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px $bluelightgrey;
 }
 
 // Smallest device

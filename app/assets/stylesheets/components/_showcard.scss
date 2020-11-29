@@ -1,7 +1,7 @@
 .card-trip {
   margin-top: 20px;
   overflow: hidden;
-  background: white;
+  background: $bluewhite;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 6px;
 }
@@ -60,7 +60,7 @@ margin-bottom: 20px;
 }
 
 #map {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px $bluelightgrey;
   border-radius: 6px;
   margin: 0 auto;
 }

@@ -1,6 +1,6 @@
 .form-box {
   border-radius: 6px;
-  border: 1px solid #e8ecee;
+  border: 1px solid $bluelightgrey;
 }
 
 .form-inputs {
@@ -10,7 +10,7 @@
   input {
     border-radius: 12px;
     border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    box-shadow:0 0 15px $bluelightgrey;
   }
 }
 
@@ -28,11 +28,11 @@
 .container input {
     border-radius: 12px;
     border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    box-shadow:0 0 15px $bluelightgrey;
 }
 
 .form-control {
     border-radius: 12px;
     border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    box-shadow:0 0 15px $bluelightgrey;
 }

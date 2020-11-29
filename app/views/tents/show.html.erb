@@ -21,8 +21,8 @@
   <div class="container booking-box">
     <% if @tent.user == current_user %>
     <div class="center">
-      <%= link_to "Edit Tent Details", edit_tent_path(@tent), class: "btn btn-success" %>
-      <%= link_to "Remove Listing", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+      <%= link_to "Edit Site Details", edit_tent_path(@tent), class: "btn btn-success" %>
+      <%= link_to "Remove Site", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
     </div>
     <% else %>
       <%= render "shared/new_booking_form" %>
@@ -36,7 +36,7 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <% else %>
-    <div class="center"><p>There is no map avaialable for this listing. The address was not found by mapbox.</p></div>
+    <div class="center"><p>Sorry, There's no map avaialable for this campsite. Mapbox isn't finding the coordinates.</p></div>
     <% end %>
     </div>
   </div>
