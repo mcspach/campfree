@@ -1,12 +1,12 @@
 .card {
 	height: 250px;
 	border-radius: 1px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px $bluelightgrey;
 	display: flex;
 	align-items: center;
 	// justify-content: space-around;
 	font-size: 18px;
-	color: black;
+	color: $blueblack;
 	font-weight: bolder;
 	margin-bottom: 16px;
 	text-decoration: none;

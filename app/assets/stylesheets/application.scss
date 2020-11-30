@@ -31,12 +31,12 @@ p {
 .btn-warning, 
 .btn-danger,
 .btn-primary {
-  background-color: #5FBEC6;
-  border-radius: 12px; 
-  box-shadow: 0 0 1px;
+  background-color: $green;
+  border-radius: 18px; 
+  box-shadow: 0 0 1.5px $bluegrey;
   margin: 4px;
   border: none;
-  color: white;
+  color: $bluewhite;
 }
 
 .btn:hover,
@@ -44,23 +44,23 @@ p {
 .btn-warning:hover, 
 .btn-danger:hover,
 .btn-primary:hover {
-  background-color: #AAD9DD;
-  box-shadow: 0 0 1.5px white;
-  color: white
+  background-color: $lightgreen;
+  box-shadow: 0 0 1.5px $bluegrey;
+  color: $bluewhite
 } 
 
 a {
-  border-radius: 12px;
-  color: white;
+  border-radius: 18px;
+  color: $bluewhite;
 }
 
 a:hover {
-  color: white;
+  color: $bluewhite;
 }
 
 select {
-  border-radius: 12px; 
-  box-shadow: 0 0 1px grey;
+  border-radius: 18px; 
+  box-shadow: 0 0 1.5px $bluegrey;
   border: none;
   padding: 9px;
   margin: 4px;

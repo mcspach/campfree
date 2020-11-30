@@ -11,7 +11,7 @@
 	z-index: 10;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	color: #fff;
+	color: $bluewhite;
 	text-align: center;
 }
 
@@ -29,12 +29,12 @@
 	height: 500px;
 	max-width: none;
 	background-repeat: no-repeat;
-	background-color: black;
+	background-color: $blueblack;
 }
 
 .h1-responsive {
-	font-size: 80px;
-	padding-bottom: 200px;
+	font-size: 55px;
+	padding-bottom: 190px;
 }
 
 .search_box {
