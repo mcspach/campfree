@@ -1,3 +1,8 @@
+The current release of this web-app is usually found at 
+https://campfree.herokuapp.com/
+
+------------
+
 When you clone the app to your local machine, run this series of commands in the Terminal:
 
 Check your versions of Ruby and Rails with
