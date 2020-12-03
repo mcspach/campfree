@@ -16,7 +16,8 @@
 }
 
 .typing {
-	font-size: 32px;
+  font-size: 32px;
+  font-family: "K2D", sans-serif;
 	text-align: center;
 }
 
@@ -25,8 +26,8 @@
 	background-position: 50% 100%;
 }
 .view {
-	background-position: 50% 100%;
-	height: 500px;
+	// background-position: 100% 100%;
+	background-size: cover;
 	max-width: none;
 	background-repeat: no-repeat;
 	background-color: $blueblack;
