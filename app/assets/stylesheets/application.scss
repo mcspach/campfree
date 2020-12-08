@@ -30,9 +30,10 @@ p {
 .btn-success, 
 .btn-warning, 
 .btn-danger,
-.btn-primary {
+.btn-primary, 
+ {
   background-color: $green;
-  border-radius: 18px; 
+  border-radius: 18px !important; 
   box-shadow: 0 0 1.5px $bluegrey;
   margin: 4px;
   border: none;
@@ -49,6 +50,10 @@ p {
   color: $bluewhite
 } 
 
+.blank {
+  background-color: $bluelightgrey;
+}
+
 a {
   border-radius: 18px;
   color: $bluewhite;
@@ -64,4 +69,18 @@ select {
   border: none;
   padding: 9px;
   margin: 4px;
+}
+
+@media (max: 680px) {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+	  font-size: .9rem;
+  }
+
 }

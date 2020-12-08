@@ -1,6 +1,7 @@
 .navbar-lewagon {
 	justify-content: space-between;
   background: $bluewhite;
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -22,8 +23,22 @@
 }
 
 .navbar h1 {
-  font-size: 30px;
+  font-size: 36px;
+  margin-top: 6px;
 }
+
+.nav-link {
+  color: $bluegrey;
+  border: 1px solid $bluegrey;
+  border-radius: 24px !important;
+  padding: 4px;
+}
+
+.nav-link:hover {
+    color: $green;
+    border: 1px solid $green;
+  }
+
 
 @media (max-width: 680px) {
 
@@ -32,7 +47,7 @@
   }
   
   .navbar h1 {
-    font-size: 20px;
+    font-size: 24px;
     white-space: nowrap;
   }
 
