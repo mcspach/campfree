@@ -1,17 +1,15 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
-</style>
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+
+<div class="navbar navbar-expand navbar-lewagon sticky-top">
 <%# if working with local files, dont need relative path. just file name (absolute path) %>
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/spachbox/image/upload/v1606669893/CAMPFREE_logo_be7awb.png" %> 
   <% end %>
-  <h1 class="nav-title">CAMPFREE</h1>
+  <h1 class="nav-title">CAMP FREE</h1>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <div class = "pill-nav" id = "navbarDropdown", data-toggle = "dropdown" , aria-haspopup = 'true', aria-expanded = 'false'>
