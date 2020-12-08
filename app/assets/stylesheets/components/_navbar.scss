@@ -1,6 +1,6 @@
 .navbar-lewagon {
 	justify-content: space-between;
-	background: $bluewhite;
+  background: $bluewhite;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,10 +18,34 @@
 }
 
 .navbar-lewagon .navbar-brand img:hover {
-	transform: scale(1.25);
+	transform: scale(1.2);
 }
 
-.h1 {
-	align-self: center;
+.navbar h1 {
+  font-size: 30px;
+}
+
+@media (max-width: 680px) {
+
+  .navbar, .navbar-lewagon, .navbar-light {
+    flex-wrap: nowrap;
+  }
+  
+  .navbar h1 {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .navbar-lewagon .navbar-brand img {
+    transition: 0.6s ease;
+    width: 40px;
+    margin: 0px;
+  }
+
+  .navbar-lewagon .navbar-collapse {
+    transition: 0.6s ease;
+    display: inline;
+  }
+
 }
 
