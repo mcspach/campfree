@@ -1,6 +1,12 @@
 The current release of this web-app is usually found at 
 https://campfree.herokuapp.com/
 
+----------
+You may use this demo user to sign in, if you don't want to spend the time to create your own profile:
+
+email: bob@example.com
+password: 123456
+
 ------------
 
 When you clone the app to your local machine, run this series of commands in the Terminal:
@@ -22,7 +28,6 @@ $ rails s
  
  At that point you should be good to open a new branch and code
  
- 
 ------------
 
 Right now, the map only appears on show page for each campsite.
@@ -35,8 +40,4 @@ Mapbox stuff is in a few different spots, but the majority is in app/javascript/
 ---------
 
 
-At that point you should be good to code
-
-
-
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+This is a Ruby on Rails application, started with the help of students from Le Wagon Mexico batch #483.
