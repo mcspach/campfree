@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 2020_11_19_173356) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_tents_on_user_id"
+    # change name to sites
+    # add type of land
+    # add and active flag
+    # elevation, state, region, address should optional
+    # get postgis enabled and then add geometry column, what is the data type?
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +77,11 @@ ActiveRecord::Schema.define(version: 2020_11_19_173356) do
     t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    # add first_name
+    # add last_name
+    # What is salt??
+    # add city and state column --- id
+    # 
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -79,3 +89,8 @@ ActiveRecord::Schema.define(version: 2020_11_19_173356) do
   add_foreign_key "bookings", "users"
   add_foreign_key "tents", "users"
 end
+
+# What's the user_campsites_geom_idx?
+# Why is there a whole different table for external sites, and how will we get data?
+# isn't there an easier way to get state from coordinate data?
+#
