@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'tents#index'
+  root to: 'sites#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, except: [:index] do
     member do
-      get :bookings
+      get :trips
     end
     member do
-      get :tents
+      get :sites
     end
   end
 
-  resources :tents do
-    resources :bookings, only: [:index, :new, :create]
+  resources :sites do
+    resources :trips, only: [:index, :new, :create]
   end
 
-  resources :bookings, only: [:edit, :update, :destroy]
+  resources :trips, only: [:edit, :update, :destroy]
 end
