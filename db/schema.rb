@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_173356) do
+ActiveRecord::Schema.define(version: 2020_12_28_011219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,18 +36,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_173356) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.date "checkin_date"
-    t.date "checkout_date"
-    t.bigint "user_id", null: false
-    t.bigint "tent_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tent_id"], name: "index_bookings_on_tent_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "tents", force: :cascade do |t|
+  create_table "sites", force: :cascade do |t|
     t.string "title"
     t.integer "price"
     t.text "description"
@@ -58,12 +47,18 @@ ActiveRecord::Schema.define(version: 2020_11_19_173356) do
     t.string "state"
     t.float "latitude"
     t.float "longitude"
-    t.index ["user_id"], name: "index_tents_on_user_id"
-    # change name to sites
-    # add type of land
-    # add and active flag
-    # elevation, state, region, address should optional
-    # get postgis enabled and then add geometry column, what is the data type?
+    t.index ["user_id"], name: "index_sites_on_user_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.date "checkin_date"
+    t.date "checkout_date"
+    t.bigint "user_id", null: false
+    t.bigint "tent_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tent_id"], name: "index_trips_on_tent_id"
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,20 +72,10 @@ ActiveRecord::Schema.define(version: 2020_11_19_173356) do
     t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    # add first_name
-    # add last_name
-    # What is salt??
-    # add city and state column --- id
-    # 
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "tents"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "tents", "users"
+  add_foreign_key "sites", "users"
+  add_foreign_key "trips", "sites", column: "tent_id"
+  add_foreign_key "trips", "users"
 end
-
-# What's the user_campsites_geom_idx?
-# Why is there a whole different table for external sites, and how will we get data?
-# isn't there an easier way to get state from coordinate data?
-#

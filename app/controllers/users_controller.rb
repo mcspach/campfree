@@ -6,22 +6,22 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user), notice: "You have successfully created your profile!!"
+      redirect_to user_path(@user), notice: "You have successfully created your profile!"
     else
       render :new
     end
   end
 
-  def tents
-    @tents = Tent.where(user: current_user)
+  def sites
+    @sites = Site.where(user: current_user)
   end
 
-  def bookings
-    @bookings = Booking.where(user: current_user)
+  def trips
+    @trips = Trip.where(user: current_user)
   end
 
   def show
-    @user = User.find(params[:id]) # ask TA if we need to use current_user here?
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to root_path, notice: "Thank you for using Outpost!"
+    redirect_to root_path, notice: "Thank you for using DirtBag Map!"
   end
 
   private
