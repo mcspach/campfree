@@ -4,11 +4,11 @@
 
   <div class="content-layout">
         <div class="cards">
-          <% @tents.each do |tent| %>
-          <%= link_to tent_path(tent) do %>
+          <% @sites.each do |site| %>
+          <%= link_to site_path(site) do %>
           <div class="card">
-            <%= cl_image_tag(tent.photos.first.key, crop: :fill, class: "card-image") %>
-            <p><%=tent.title%></p>
+            <%= cl_image_tag(site.photos.first.key, crop: :fill, class: "card-image") %>
+            <p><%=site.title%></p>
           </div>
           <% end %>
         <% end %>
