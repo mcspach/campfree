@@ -1,42 +1,42 @@
 
 <div class="container">
 <div class="card-trip">
-  <% if not @tent.photos.empty? %>
-    <%= cl_image_tag(@tent.photos.first.key, crop: :fill) %>
+  <% if not @site.photos.empty? %>
+    <%= cl_image_tag(@site.photos.first.key, crop: :fill) %>
   <% end  %>
   <div class="card-trip-infos">
     <div>
-      <h3><%= @tent.title %></h3>
-      <h2><%= @tent.state %></h2>
-      <p><%= @tent.description %></p>
+      <h3><%= @site.title %></h3>
+      <h2><%= @site.state %></h2>
+      <p><%= @site.description %></p>
     </div>
-    <h2 class="card-trip-pricing">$<%= @tent.price %></h2>
-      <% if not @tent.user.photo.nil? %>
-        <%= cl_image_tag(@tent.user.photo.key, crop: :fill, width: 350, height: 350, class: "card-trip-user avatar-bordered")%>
+    <h2 class="card-trip-pricing">$<%= @site.price %></h2>
+      <% if not @site.user.photo.nil? %>
+        <%= cl_image_tag(@site.user.photo.key, crop: :fill, width: 350, height: 350, class: "card-trip-user avatar-bordered")%>
       <% end %>
   </div>
 </div>
 
 
   <div class="container booking-box">
-    <% if @tent.user == current_user %>
+    <% if @site.user == current_user %>
     <div class="center">
-      <%= link_to "Edit Site Details", edit_tent_path(@tent), class: "btn btn-success" %>
-      <%= link_to "Remove Site", tent_path(@tent), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+      <%= link_to "Edit Site Details", edit_site_path(@site), class: "btn btn-success" %>
+      <%= link_to "Remove Site", site_path(@site), method: :delete, data: { confirm: "Are you sure? You cannot undo this action." }, class: "btn btn-success" %>
     </div>
     <% else %>
-      <%= render "shared/new_booking_form" %>
+      <%= render "shared/new_trip_form" %>
     <% end %>
   </div>
 
-  <div class="contiainer">
-    <% if @tent.geocoded? %>
-    <div id="map"
+  <div class="container">
+    <% if @site.geocoded? %>
+    <div class="map"
         style="width: 80%; height: 400px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <% else %>
-    <div class="center"><p>Sorry, There's no map avaialable for this campsite. Mapbox isn't finding the coordinates.</p></div>
+    <div class="map center"><p>Sorry, There's no map avaialable for this campsite. Mapbox isn't finding the coordinates.</p></div>
     <% end %>
     </div>
   </div>
