@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_011219) do
+ActiveRecord::Schema.define(version: 2020_12_28_051004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 2020_12_28_011219) do
     t.index ["user_id"], name: "index_sites_on_user_id"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "trips", force: :cascade do |t|
     t.date "checkin_date"
     t.date "checkout_date"
@@ -70,12 +76,17 @@ ActiveRecord::Schema.define(version: 2020_12_28_011219) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.bigint "state_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["state_id"], name: "index_users_on_state_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "sites", "users"
   add_foreign_key "trips", "sites", column: "tent_id"
   add_foreign_key "trips", "users"
+  add_foreign_key "users", "states"
 end

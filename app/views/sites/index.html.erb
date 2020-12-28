@@ -50,7 +50,7 @@
 </div>
 
 <div class="search_box">
-<%= form_tag tents_path, method: :get do %>
+<%= form_tag sites_path, method: :get do %>
   <%= select_tag :state, options_for_select(['All States', 'Alabama','Alaska','Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Illinois','Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota','Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire','New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'], params[:state])
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
@@ -67,11 +67,11 @@
 <div class="container">
   <div class="content-layout">
         <div class="cards mt-0">
-          <% @tents.each do |tent| %>
-          <%= link_to tent_path(tent) do %>
+          <% @sites.each do |site| %>
+          <%= link_to site_path(site) do %>
           <div class="card">
-            <%= cl_image_tag(tent.photos.first.key, crop: :fill, class: "card-image") %>
-            <p><%=tent.title%></p>
+            <%= cl_image_tag(site.photos.first.key, crop: :fill, class: "card-image") %>
+            <p><%=site.title%></p>
           </div>
           <% end %>
         <% end %>

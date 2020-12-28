@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-Booking.destroy_all
+Trip.destroy_all
 User.destroy_all
 
 User.create(
@@ -33,7 +33,7 @@ User.last.photo.attach(io: avatar2, filename: 'B.png', content_type: 'image/png'
 
 puts "User Created!"
 
-tent_1 = Tent.create!(
+site_1 = Site.create!(
   title: "Beautiful woodsy camp in NorCal",
   address: "20334 Saticoy St, Winnetka, California, 91306",
   state: "California",
@@ -42,7 +42,7 @@ tent_1 = Tent.create!(
   user_id: User.all.sample.id 
 )
 
-tent_2 = Tent.create!(
+site_2 = Site.create!(
   title: "Cute traditional tent by the lake",
   address: "100 Dugway Rd, Waitsfield, Vermont, 05673",
   state: "Vermont",
@@ -51,7 +51,7 @@ tent_2 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_3 = Tent.create!(
+site_3 = Site.create!(
   title: "Unique weekend getaway sleeps 4",
   address: "72518 240th St, Dassel, Minnesota, 55325",
   state: "Minnesota",
@@ -60,7 +60,7 @@ tent_3 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_4 = Tent.create!(
+site_4 = Site.create!(
   title: "Awesome couple retreat site",
   address: "910 Sagewood Dr, South Lake Tahoe, California, 96150",
   state: "California",
@@ -69,7 +69,7 @@ tent_4 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_5 = Tent.create!(
+site_5 = Site.create!(
   title: "The windbreaker in the woods",
   address: "21 Decker Rd, Sheridan, Wyoming, 82801",
   state: "Wyoming",
@@ -78,7 +78,7 @@ tent_5 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_6 = Tent.create!(
+site_6 = Site.create!(
   title: "Lovely little forest escape",
   address: "8645 Saint James Ave, Elmhurst, New York, 11373",
   state: "New York",
@@ -87,7 +87,7 @@ tent_6 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_7 = Tent.create!(
+site_7 = Site.create!(
   title: "Beachmaster wave-riders camp",
   address: "487 E Middlefield Rd, Mountain View, California, 94043",
   state: "California",
@@ -96,7 +96,7 @@ tent_7 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_8 = Tent.create!(
+site_8 = Site.create!(
   title: "Barnyard Boogiewoogie",
   address: "313 Lake Placid Loop, Valley, Alabama, 36854",
   state: "Alabama",
@@ -105,7 +105,7 @@ tent_8 = Tent.create!(
   user_id: User.all.sample.id
 )
 
-tent_9 = Tent.create!(
+site_9 = Site.create!(
   title: "Social Campsites near Yellowstone",
   address: "727 Big Horn Ave, Sheridan, Wyoming, 82801",
   state: "Wyoming",
@@ -115,23 +115,23 @@ tent_9 = Tent.create!(
 )
 
 file1 = URI.open('https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_1.photos.attach(io: file1, filename: '1.png', content_type: 'image/png')
+site_1.photos.attach(io: file1, filename: '1.png', content_type: 'image/png')
 file2 = URI.open('https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_2.photos.attach(io: file2, filename: '2.png', content_type: 'image/png')
+site_2.photos.attach(io: file2, filename: '2.png', content_type: 'image/png')
 file3 = URI.open('https://images.unsplash.com/photo-1508266822900-0640fd19e392?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_3.photos.attach(io: file3, filename: '3.png', content_type: 'image/png')
+site_3.photos.attach(io: file3, filename: '3.png', content_type: 'image/png')
 file4 = URI.open('https://images.unsplash.com/photo-1525811902-f2342640856e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80')
-tent_4.photos.attach(io: file4, filename: '4.png', content_type: 'image/png')
+site_4.photos.attach(io: file4, filename: '4.png', content_type: 'image/png')
 file5 = URI.open('https://images.unsplash.com/photo-1542332213-1d277bf3d6c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_5.photos.attach(io: file5, filename: '5.png', content_type: 'image/png')
+site_5.photos.attach(io: file5, filename: '5.png', content_type: 'image/png')
 file6 = URI.open('https://images.unsplash.com/photo-1604906145393-5d0fdd5a199a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_6.photos.attach(io: file6, filename: '6.png', content_type: 'image/png')
+site_6.photos.attach(io: file6, filename: '6.png', content_type: 'image/png')
 file7 = URI.open('https://images.unsplash.com/photo-1534507658483-02cfca87f13f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_7.photos.attach(io: file7, filename: '7.png', content_type: 'image/png')
+site_7.photos.attach(io: file7, filename: '7.png', content_type: 'image/png')
 file8 = URI.open('https://images.unsplash.com/photo-1489176876421-3b720db0fb3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_8.photos.attach(io: file8, filename: '8.png', content_type: 'image/png')
+site_8.photos.attach(io: file8, filename: '8.png', content_type: 'image/png')
 file9 = URI.open('https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-tent_9.photos.attach(io: file9, filename: '9.png', content_type: 'image/png')
+site_9.photos.attach(io: file9, filename: '9.png', content_type: 'image/png')
 
 
-puts "Tent Created!"
+puts "9 Sites Created!"
