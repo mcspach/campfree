@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_051004) do
+ActiveRecord::Schema.define(version: 2020_12_28_054418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,14 @@ ActiveRecord::Schema.define(version: 2020_12_28_051004) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.date "checkin_date"
-    t.date "checkout_date"
     t.bigint "user_id", null: false
     t.bigint "tent_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "arrival_date"
+    t.date "departure_date"
+    t.bigint "site_id"
+    t.index ["site_id"], name: "index_trips_on_site_id"
     t.index ["tent_id"], name: "index_trips_on_tent_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
@@ -86,7 +88,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_051004) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "sites", "users"
-  add_foreign_key "trips", "sites", column: "tent_id"
+  add_foreign_key "trips", "sites"
   add_foreign_key "trips", "users"
   add_foreign_key "users", "states"
 end
