@@ -10,8 +10,8 @@ class TripsController < ApplicationController
     @site = Site.find(params[:site_id])
     @trip.site = @site
     @trip.user = current_user
-    if @trip.save!
-      redirect_to trips_user_path(current_user), notice: "You have successfully booked this tent!"
+    if @trip.save
+      redirect_to trips_user_path(current_user), notice: "Your trip has been saved!"
     else
       render :new
     end
@@ -37,6 +37,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:checkin_date, :checkout_date)
+    params.require(:trip).permit(:arrival_date, :departure_date)
   end
 end
