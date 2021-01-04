@@ -49,7 +49,7 @@ class SitesController < ApplicationController
   def destroy
     @site = Site.find(params[:id])
     @site.destroy
-    redirect_to root_path, notice: "Thank you for using Outpost"
+    redirect_to root_path, notice: "Thank you for using Dirtbag Map"
   end
 
   private

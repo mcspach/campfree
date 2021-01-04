@@ -50,9 +50,16 @@ margin-bottom: 20px;
 }
 
 .booking-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 30px;
-  width: 40%;
+  width: 80%;
   margin: 0 auto;
+}
+
+.booking-box form {
+  margin: 10% !important;
 }
 
 .date {
@@ -76,4 +83,10 @@ margin-bottom: 20px;
 .avatar-bordered {
   height: 40px;
   width: 60px;
+}
+
+@media screen and (max-width: 700px) {
+  .booking-box {
+    flex-direction: column;
+  }
 }
